@@ -48,9 +48,7 @@ export default function Contact() {
 
       if (res.ok && data.success) {
         setStatus("success");
-        setFeedbackMessage(
-          data.message || `Message dispatched successfully to ${CONTACT_EMAIL}!`
-        );
+        setFeedbackMessage("Message sent successfully! Thank you for reaching out.");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         setStatus("error");
@@ -213,9 +211,9 @@ export default function Contact() {
                 <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold">Message dispatched!</p>
+                    <p className="font-semibold">Message sent successfully!</p>
                     <p className="text-xs text-emerald-300/90 mt-1 leading-relaxed">
-                      {feedbackMessage || `Your message was forwarded to ${CONTACT_EMAIL}. I will reply promptly.`}
+                      Thank you for contacting! Your message has been sent to {CONTACT_EMAIL}. I will reply to your email promptly.
                     </p>
                   </div>
                 </div>
