@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowUp, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -73,7 +74,7 @@ export default function Footer() {
           <p>© 2026 Abiya, Senior Software Developer. Built with Next.js 16, React 19 &amp; Tailwind CSS.</p>
           <div className="flex items-center gap-4 text-zinc-300">
             <a
-              href="https://github.com"
+              href="https://github.com/AbiyaRaj/AbiyaRaj"
               target="_blank"
               rel="noreferrer"
               className="hover:text-white transition"
@@ -82,7 +83,7 @@ export default function Footer() {
               <GithubIcon className="w-4 h-4" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/abiya-selvaraj-0b7a0428a"
               target="_blank"
               rel="noreferrer"
               className="hover:text-indigo-400 transition"
@@ -91,7 +92,7 @@ export default function Footer() {
               <LinkedinIcon className="w-4 h-4" />
             </a>
             <a
-              href="mailto:abiyaraj7@gmail.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="hover:text-cyan-400 transition"
               aria-label="Email Abiya S"
             >

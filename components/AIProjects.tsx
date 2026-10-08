@@ -46,7 +46,7 @@ export default function AIProjects() {
       keyHighlight: "Published research in IJRAEM journal advancing automated industrial safety monitoring",
       stack: ["Image Processing", "Computer Vision", "Python", "OpenCV", "Algorithms"],
       liveUrl: "https://example.com/publication",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/AbiyaRaj/AbiyaRaj",
       isPublication: true,
     },
     {
@@ -65,7 +65,7 @@ export default function AIProjects() {
       keyHighlight: "Identifies student drop-off trends with 89% predictive accuracy",
       stack: ["Next.js", "React.js", "PHP APIs", "Python", "MySQL", "REST APIs"],
       liveUrl: "https://example.com/ai-lms",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/AbiyaRaj/AbiyaRaj",
     },
     {
       id: "digital-library-ocr-indexing",
@@ -83,7 +83,7 @@ export default function AIProjects() {
       keyHighlight: "Enables instant full-text discovery across scanned multi-page library documents",
       stack: ["PHP CodeIgniter", "Tesseract OCR", "MySQL", "Node.js", "REST APIs"],
       liveUrl: "https://example.com/library-ai",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/AbiyaRaj/AbiyaRaj",
     },
     {
       id: "trackup-intelligent-analytics",
@@ -101,7 +101,7 @@ export default function AIProjects() {
       keyHighlight: "Automates daily employee productivity summaries and duration audits",
       stack: ["JavaScript", "HTML5", "CSS3", "Chart.js", "PHP APIs"],
       liveUrl: "https://example.com/trackup-ai",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/AbiyaRaj/AbiyaRaj",
     },
   ];
 

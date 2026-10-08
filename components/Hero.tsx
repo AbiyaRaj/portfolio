@@ -13,6 +13,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -102,12 +103,12 @@ export default function Hero() {
               </span>
               <div className="h-4 w-px bg-zinc-800" />
               <a
-                href="mailto:abiyaraj7@gmail.com"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-xs text-zinc-300 hover:text-cyan-400 transition-all"
                 aria-label="Email Abiya"
               >
                 <Mail className="w-4 h-4 text-cyan-400" />
-                <span>abiyaraj7@gmail.com</span>
+                <span>{CONTACT_EMAIL}</span>
               </a>
               <a
                 href="tel:+919488521731"
@@ -177,7 +178,7 @@ export default function Hero() {
                 </p>
                 <p className="pl-4">
                   <span className="text-cyan-400">leadership</span>:{" "}
-                  <span className="text-emerald-300">&quot;Leading Frontend Team (4 members)&quot;</span>,
+                  <span className="text-emerald-300">&quot;Technical Team Leadership&quot;</span>,
                 </p>
                 <p className="pl-4">
                   <span className="text-cyan-400">keyStack</span>: [
@@ -214,7 +215,7 @@ export default function Hero() {
                 </p>
                 <p className="pl-4">
                   <span className="text-cyan-400">location</span>:{" "}
-                  <span className="text-amber-300">&quot;Nagercoil, Tamil Nadu, India&quot;</span>
+                  <span className="text-amber-300">&quot;Thuckalay, Kanyakumari, Tamil Nadu, India&quot;</span>
                 </p>
                 <p className="text-zinc-400">&#125;;</p>
 
@@ -232,14 +233,14 @@ export default function Hero() {
                 <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 text-center">
                   <div className="text-lg sm:text-xl font-bold text-white flex items-center justify-center gap-1">
                     <Users className="w-4 h-4 text-indigo-400" />
-                    4
+                    5+
                   </div>
-                  <div className="text-[10px] text-zinc-400 mt-0.5">Team Led</div>
+                  <div className="text-[10px] text-zinc-400 mt-0.5">Technical Team Leadership</div>
                 </div>
                 <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5 text-center">
                   <div className="text-lg sm:text-xl font-bold text-white flex items-center justify-center gap-1">
                     <Code2 className="w-4 h-4 text-cyan-400" />
-                    5+
+                    7+
                   </div>
                   <div className="text-[10px] text-zinc-400 mt-0.5">SaaS Systems</div>
                 </div>

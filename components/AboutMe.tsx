@@ -17,9 +17,9 @@ export default function AboutMe() {
     {
       icon: Users,
       color: "from-blue-500 to-indigo-500",
-      title: "Team Leadership",
+      title: "Technical Team Leadership",
       description:
-        "Leading a frontend engineering squad of 4 developers at Resbee Info Tech, orchestrating sprint task allocation, conducting code reviews, and ensuring timely project milestones.",
+        "Leading a frontend engineering squad of 5+ developers at Resbee Info Tech, orchestrating sprint task allocation, conducting code reviews, and ensuring timely project milestones.",
     },
     {
       icon: Code,
@@ -115,7 +115,7 @@ export default function AboutMe() {
                   </div>
                   <div>
                     <span className="text-zinc-400 block text-[11px]">Location</span>
-                    <span className="font-semibold text-white">Nagercoil, TN, India</span>
+                    <span className="font-semibold text-white">Nagercoil, Tamil Nadu, India</span>
                   </div>
                 </div>
 
@@ -145,7 +145,7 @@ export default function AboutMe() {
                   </div>
                   <div>
                     <span className="text-zinc-400 block text-[11px]">Languages</span>
-                    <span className="font-semibold text-white">English, Tamil, Mal.</span>
+                    <span className="font-semibold text-white">English, Tamil, Malayalam</span>
                   </div>
                 </div>
               </div>

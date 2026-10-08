@@ -96,7 +96,7 @@ export default function Experience() {
             </span>
           </h2>
           <p className="max-w-2xl text-zinc-300 text-sm sm:text-base leading-relaxed">
-            Hands-on professional engineering history, frontend team leadership at Pitcher
+            Hands-on professional engineering history, Technical Team Leadership at Pitcher
             Toy Tech, and academic research milestones.
           </p>
         </div>
@@ -108,8 +108,8 @@ export default function Experience() {
               {/* Timeline Indicator Dot */}
               <div
                 className={`absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full border flex items-center justify-center transition-all ${exp.current
-                    ? "bg-indigo-600 border-indigo-400 shadow-md shadow-indigo-500/50"
-                    : "bg-[#0b101d] border-white/20 group-hover:border-purple-400"
+                  ? "bg-indigo-600 border-indigo-400 shadow-md shadow-indigo-500/50"
+                  : "bg-[#0b101d] border-white/20 group-hover:border-purple-400"
                   }`}
               >
                 <div

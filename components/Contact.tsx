@@ -13,6 +13,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -23,21 +24,47 @@ export default function Contact() {
   });
 
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [feedbackMessage, setFeedbackMessage] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("error");
+      setFeedbackMessage("Please complete all required fields (Name, Email, Message).");
       return;
     }
 
     setStatus("submitting");
+    setFeedbackMessage("");
 
-    // Clean dispatch simulation
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1000);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.success) {
+        setStatus("success");
+        setFeedbackMessage(
+          data.message || `Message dispatched successfully to ${CONTACT_EMAIL}!`
+        );
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("error");
+        setFeedbackMessage(
+          data.error || "Could not deliver your message right now. You can send it directly via email below."
+        );
+      }
+    } catch (err) {
+      console.error("Submission failed:", err);
+      setStatus("error");
+      setFeedbackMessage(
+        "Network connection interrupted. You can send your message directly via your email client."
+      );
+    }
   };
 
   return (
@@ -80,7 +107,7 @@ export default function Contact() {
               {/* Info Cards */}
               <div className="space-y-4">
                 <a
-                  href="mailto:abiyaraj7@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 hover:bg-white/[0.04] transition group"
                 >
                   <div className="p-3 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 group-hover:scale-105 transition-transform">
@@ -91,7 +118,7 @@ export default function Contact() {
                       Email Address
                     </span>
                     <span className="text-sm font-semibold text-white group-hover:text-indigo-300 transition-colors">
-                      abiyaraj7@gmail.com
+                      {CONTACT_EMAIL}
                     </span>
                   </div>
                 </a>
@@ -149,7 +176,7 @@ export default function Contact() {
                 </span>
                 <div className="flex items-center gap-3">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/AbiyaRaj/AbiyaRaj"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-xs font-medium text-zinc-300 hover:text-white transition"
@@ -158,7 +185,7 @@ export default function Contact() {
                     <span>GitHub</span>
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/abiya-selvaraj-0b7a0428a"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 text-xs font-medium text-zinc-300 hover:text-indigo-400 transition"
@@ -183,21 +210,37 @@ export default function Contact() {
               </p>
 
               {status === "success" && (
-                <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold">Message sent successfully!</p>
-                    <p className="text-xs text-emerald-400/90 mt-0.5">
-                      Thank you for contacting. I will reply to your email promptly.
+                    <p className="font-semibold">Message dispatched!</p>
+                    <p className="text-xs text-emerald-300/90 mt-1 leading-relaxed">
+                      {feedbackMessage || `Your message was forwarded to ${CONTACT_EMAIL}. I will reply promptly.`}
                     </p>
                   </div>
                 </div>
               )}
 
               {status === "error" && (
-                <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-300 text-sm flex items-center gap-3">
-                  <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
-                  <span>Please complete all required fields.</span>
+                <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-300 text-sm space-y-3">
+                  <div className="flex items-start gap-3">
+                    <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold">Could not send transmission</p>
+                      <p className="text-xs text-red-300/90 mt-1 leading-relaxed">
+                        {feedbackMessage || "An error occurred while sending the message."}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-2 border-t border-red-500/20 flex flex-wrap items-center gap-2">
+                    <a
+                      href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(formData.subject || "Portfolio Contact")}&body=${encodeURIComponent(`Hi Abiya,\n\n${formData.message}\n\nFrom: ${formData.name} (${formData.email})`)}`}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-white text-xs font-medium transition"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-red-300" />
+                      <span>Send directly via your Email Client</span>
+                    </a>
+                  </div>
                 </div>
               )}
 

@@ -37,7 +37,7 @@ export default function Projects() {
       metrics: "Enhanced user engagement with sub-second page transitions & payment integration",
       tags: ["Next.js", "React.js", "PHP APIs", "MySQL", "GitHub Deployment", "Payment Gateway"],
       liveUrl: "https://example.com/lms",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/AbiyaRaj/AbiyaRaj",
       featured: true,
     },
     {
@@ -50,7 +50,7 @@ export default function Projects() {
       metrics: "Deployed across Ethiopian institutional networks with Jenkins CI/CD automation",
       tags: ["PHP CodeIgniter", "MySQL", "REST APIs", "Jenkins Deployment", "Bootstrap V5"],
       liveUrl: "https://example.com/school-erp",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/AbiyaRaj/AbiyaRaj",
       featured: true,
     },
     {
@@ -63,7 +63,7 @@ export default function Projects() {
       metrics: "Handles thousands of digital catalog items with optimized MySQL schema",
       tags: ["PHP CodeIgniter 3", "MySQL", "REST APIs", "Dynamic Content", "jQuery", "CSS3"],
       liveUrl: "https://example.com/digital-library",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/AbiyaRaj/AbiyaRaj",
       featured: false,
     },
     {
@@ -76,7 +76,7 @@ export default function Projects() {
       metrics: "Streamlined administrative approval times with automated API notifications",
       tags: ["PHP CodeIgniter 4", "REST APIs", "Jenkins", "Material UI", "MySQL"],
       liveUrl: "https://example.com/hr-admin",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/AbiyaRaj/AbiyaRaj",
       featured: false,
     },
     {
@@ -89,7 +89,7 @@ export default function Projects() {
       metrics: "Intuitive UI/UX providing accurate real-time duration and task metrics",
       tags: ["JavaScript", "HTML5", "CSS3", "UI/UX", "Time Tracking", "Analytics"],
       liveUrl: "https://example.com/trackup",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/AbiyaRaj/AbiyaRaj",
       featured: false,
     },
   ];

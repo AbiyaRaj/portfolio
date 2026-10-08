@@ -14,6 +14,7 @@ import {
   Languages,
   BookOpen,
 } from "lucide-react";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export default function Resume() {
   const EDUCATION = [
@@ -72,7 +73,7 @@ export default function Resume() {
           {/* Action buttons */}
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="mailto:abiyaraj7@gmail.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-600 to-cyan-500 hover:opacity-95 shadow-lg shadow-indigo-500/25 transition-all hover:scale-105"
             >
               <Download className="w-4 h-4" />
@@ -142,8 +143,8 @@ export default function Resume() {
                   <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
                   <div>
                     <span className="text-[11px] text-zinc-400 block">Email</span>
-                    <a href="mailto:abiyaraj7@gmail.com" className="font-semibold text-white hover:text-cyan-300">
-                      abiyaraj7@gmail.com
+                    <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-white hover:text-cyan-300">
+                      {CONTACT_EMAIL}
                     </a>
                   </div>
                 </div>
@@ -230,7 +231,7 @@ export default function Resume() {
                   <span className="text-[11px] font-mono text-zinc-400">May 2022 – Present</span>
                 </div>
                 <h4 className="text-sm font-semibold text-white mt-2 mb-1">
-                  Frontend Team Lead • Resbee Info Tech
+                  Technical Team Leadership • Resbee Info Tech
                 </h4>
                 <p className="text-xs text-zinc-300 leading-relaxed">
                   Directing frontend architecture and a team of 4 engineers delivering SaaS LMS solutions and educational ERP platforms.
